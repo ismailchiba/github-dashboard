@@ -1,0 +1,108 @@
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 20px;
+    gap: 40px;
+    width: 100vw;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.user--logo {
+    align-self: center;
+    margin-bottom: 10px;
+    width: 100%; /* Set the width to 100% of its container */
+    max-width: 256px; /* Maximum width to prevent it from becoming too large */
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.15);
+    object-fit: cover;
+}
+.user-profil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+}
+
+
+.user--name {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    text-decoration: none;
+
+}
+.Bio {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: rgba(250, 250, 250, 0.8);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    padding: 4px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    text-align: start;
+    color: rgba(250, 250, 250, 0.8); 
+    font-size: 0.9rem;
+}
+
+
+.charts-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    width: 100%;
+}
+
+.chart-container {
+    width: 54%;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    backdrop-filter: blur(15px);
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .charts-container {
+        width: 100%;
+    }
+
+    .user-profil {
+        max-width: 100%;
+        width: 90%;
+    }
+}
