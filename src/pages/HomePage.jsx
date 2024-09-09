@@ -9,6 +9,11 @@ import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Toolti
 // Register the components with Chart.js
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
+const formatDate = (dateString) => {
+    const options = { year: 'numeric', month: 'short', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString(undefined, options);
+};
+
 const HomePage = () => {
     const location = useLocation();
     const { username, userData } = location.state || {};
@@ -191,7 +196,6 @@ const contributionsOptions = {
     },
 };
 
-console.log(userData);
     return (
       <>
         <Sidebar userData={userData} username={username}></Sidebar>
@@ -218,13 +222,13 @@ console.log(userData);
                   <a href={userData.html_url} className='user--name'>{userData.name}</a>
                   <p className='Bio'><strong>Bio:</strong> {userData.bio}</p>
                   <ul>
-                  <li><strong>Email:</strong> {userData.email}</li>
-                  <li><strong>Location:</strong> {userData.location}</li>
-                  <li><strong>Company:</strong> {userData.company}</li>
-                  <li><strong>Repositories:</strong> {userData.public_repos}</li>
-                  <li><strong>Followers:</strong> {userData.followers}</li>
-                  <li><strong>Following:</strong> {userData.following}</li>
-                  <li><strong>Created at:</strong> {userData.created_at}</li>
+                  <li><strong>Created at  :</strong> {formatDate(userData.created_at)}</li>
+                  <li><strong>Location  :</strong> {userData.location}</li>
+                  <li><strong>Company  :</strong> {userData.company}</li>
+                  <li><strong>Repositories  :</strong> {userData.public_repos}</li>
+                  <li><strong>Gists  :</strong> {userData.public_gists}</li>
+                  <li><strong>Followers  :</strong> {userData.followers}</li>
+                  <li><strong>Following  :</strong> {userData.following}</li>
                   </ul>
                 </div>
                 {/* Chart for visualizing GitHub stats */}

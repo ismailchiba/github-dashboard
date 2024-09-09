@@ -7,6 +7,7 @@ export const getUserData = async (username) => {
   try {
     const response = await axios.get(`${BASE_URL}/${username}`);
     return response.data;
+    
   } catch (error) {
     console.error("Error fetching user data:", error);
     throw error;
@@ -17,6 +18,7 @@ export const getRepoData = async (username, reponame) => {
   try {
     // Fetch repository data
     const repoResponse = await axios.get(`${REPO_URL}/${username}/${reponame}`);
+    console.log(repoResponse.data);
     const repoData = repoResponse.data;
 
     // Fetch pull request data
