@@ -27,10 +27,16 @@ export const getRepoData = async (username, reponame) => {
     );
     const pullRequestsCount = pullsResponse.data.length;
 
+    const commitsResponse = await axios.get(
+      `${REPO_URL}/${username}/${reponame}/commits`
+    );
+    const commitsCount = commitsResponse.data.length;
+
     // Add pull request count to the repo data
     return {
       ...repoData,
       pull_requests_count: pullRequestsCount,
+      commits_count: commitsCount,
     };
   } catch (error) {
     console.log(error);
@@ -66,5 +72,15 @@ export const fetchLanguages = async (username , reponame) => {
 
 };
 
-
-
+export const getRepoContributors = async (username, reponame) => {
+  try {
+    // Fetch contributor data
+    const contributorsResponse = await axios.get(
+      `${REPO_URL}/${username}/${reponame}/contributors`
+    );
+    return contributorsResponse.data;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};

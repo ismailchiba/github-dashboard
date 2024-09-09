@@ -64,17 +64,6 @@ const Repostats = () => {
     );
   }
 
-  const getLanguagePercentage = (bytes, totalBytes) => {
-    return ((bytes / totalBytes) * 100).toFixed(2);
-  };
-
-  const totalBytes = Object.values(languages).reduce((acc, bytes) => acc + bytes, 0);
-
-
-
-
-
-
   return (
     <>
       <Sidebar userData={userData} username={username}></Sidebar>

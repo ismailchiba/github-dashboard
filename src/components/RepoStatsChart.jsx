@@ -15,27 +15,30 @@ const RepoStatsChart = ({ repoStats }) => {
     chartRef.current = new Chart(ctx, {
       type: "bar", // You can change the type (line, pie, etc.)
       data: {
-        labels: ["Stars", "Forks", "Open Issues", "Watchers"], // Labels for stats
+        labels: [ "Watchers", "Stars", "Forks", "Open Issues", "Commits"], // Labels for stats
         datasets: [
           {
             label: [repoStats.name + " statistics"],
             data: [
+              repoStats.watchers,
               repoStats.stargazers_count,
               repoStats.forks,
               repoStats.open_issues,
-              repoStats.watchers,
+              repoStats.commits_count || 0,
             ],
             backgroundColor: [
               "rgba(75, 192, 192, 0.4)",
               "rgba(255, 159, 64, 0.4)",
               "rgba(153, 102, 255, 0.4)",
               "rgba(255, 99, 132, 0.4)",
+              "rgba(54, 162, 235, 0.4)",
             ],
             borderColor: [
               "rgba(75, 192, 192, 2)",
               "rgba(255, 159, 64, 2)",
               "rgba(153, 102, 255, 2)",
               "rgba(255, 99, 132, 2)",
+              "rgba(54, 162, 235, 2)",
             ],
             borderWidth: 1,
             borderRadius: 8,
