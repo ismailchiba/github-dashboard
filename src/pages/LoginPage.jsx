@@ -31,11 +31,11 @@ const LoginPage = () => {
 
     return (
         <>
-        <a className="link" href="#"> <span>How to use ?</span></a>
+        <a className="link" href="https://ismailchiba.github.io/landing-page-v1/"> <span>How to use ?</span></a>
         <div className="container">
             <div className="card">
                 <div className="icon">
-                    <img src="src\assets\login.png" alt="login" />
+                    <img src="src/assets/login.png" alt="login" />
                 </div>
                 <h3 className="title-welcome">Welcome to :</h3>
                 <h3 className="project-name">DASHI</h3>
@@ -60,7 +60,7 @@ const LoginPage = () => {
             </div>
 
         </div>
-        <a className="link" id="buttom--link" href="#"> <span>About us</span></a>
+        <a className="link" id="buttom--link" href="https://ismailchiba.github.io/landing-page-v1/"> <span>About us</span></a>
         </>
     )
 };

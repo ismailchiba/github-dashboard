@@ -41,18 +41,18 @@ function Sidebar({ userData }) {
             <GoRepo className="icon" />
             Repositories
           </a>
-          <a href="#" className="item">
+          {/* <a href="#" className="item">
             <GoCheckCircleFill className="icon" />
             Activities
           </a>
           <a href="#" className="item">
             <GoRepo className="icon" />
             Contributions
-          </a>
-          <a href="#" className="item">
+          </a> */}
+          {/* <a href="#" className="item">
             <GoCalendar className="icon" />
             Calendar
-          </a>
+          </a> */}
         </div>
       </div>
     </div>
